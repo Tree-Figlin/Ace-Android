@@ -21,6 +21,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        manifestPlaceholders["googleMapApiKey"] = getApiKey("GOOGLE_API_KEY")
     }
     buildTypes {
         release {
@@ -92,4 +93,10 @@ dependencies {
 
     //gson
     implementation(Dependency.Google.GSON)
+}
+fun getApiKey(propertyKey: String): String {
+    val propFile = rootProject.file("./local.properties")
+    val properties = Properties()
+    properties.load(FileInputStream(propFile))
+    return properties.getProperty(propertyKey)
 }
