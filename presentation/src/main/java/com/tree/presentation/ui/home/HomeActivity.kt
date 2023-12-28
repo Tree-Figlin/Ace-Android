@@ -21,6 +21,7 @@ import com.tree.design_system.component.bottombar.AceBottomNavigationBar
 import com.tree.domain.model.news.response.ArticleListModel
 import com.tree.presentation.BuildConfig
 import com.tree.presentation.ui.base.BaseActivity
+import com.tree.presentation.ui.event.screen.EventScreen
 import com.tree.presentation.ui.home.screen.HomeScreen
 import com.tree.presentation.ui.map.screen.MapScreen
 import com.tree.presentation.ui.news.screen.NewsDetailScreen
@@ -81,8 +82,10 @@ class HomeActivity : BaseActivity() {
                 ) {
                     composable(MainPage.Home.name) {
                         HomeScreen(
+                            newsViewModel = newsViewModel,
                             onNewsClick = { navController.navigate(MainPage.News.value) },
-                            newsViewModel = newsViewModel
+                            onEventClick = { navController.navigate(MainPage.Event.value) },
+                            onMapClick = { navController.navigate(MainPage.Map.value) }
                         )
                     }
                     composable(MainPage.News.name) {
@@ -95,15 +98,13 @@ class HomeActivity : BaseActivity() {
                         )
                     }
                     composable(MainPage.Event.name) {
-
+                        EventScreen()
                     }
                     composable(MainPage.Map.name) {
                         MapScreen(
                             navController = navController,
                             viewModel = mapViewModel,
-                            onBack = {
-                                navController.popBackStack()
-                            }
+                            onBack = { navController.popBackStack() }
                         )
                     }
                     composable(SubPage.NewsDetail.name) {
