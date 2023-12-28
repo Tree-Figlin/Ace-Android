@@ -11,6 +11,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- api key local.properties 에서 가져오는 코드 추가 예정-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="" />
     </application>
 
 </manifest>

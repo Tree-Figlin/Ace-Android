@@ -1,7 +1,11 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id(ProjectProperties.Gradle.KOTLIN)
     id(ProjectProperties.Gradle.LIBRARY)
     id(ProjectProperties.Gradle.HILT)
+    id(ProjectProperties.Gradle.GMS_GOOGLE_MAP)
     kotlin(ProjectProperties.Gradle.KAPT)
 }
 
@@ -17,6 +21,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField(
+            "String",
+            "GOOGLE_API_KEY",
+            getApiKey("GOOGLE_API_KEY")
+        )
     }
     buildTypes {
         release {
@@ -55,6 +64,11 @@ dependencies {
     implementation(Dependency.Google.HILT_ANDROID)
     kapt(Dependency.Google.HILT_ANDROID_COMPILER)
 
+    //google map
+    implementation(Dependency.Google.GMS_GOOGLE_MAP)
+    implementation(Dependency.Google.GMS_GOOGLE_MAP_LOCATION)
+    implementation(Dependency.Google.GMS_GOOGLE_MAP_COMPSE)
+
     //aac
     implementation(Dependency.AndroidX.APP_COMPAT)
     implementation(Dependency.AndroidX.CORE_KTX)
@@ -83,4 +97,10 @@ dependencies {
 
     //gson
     implementation(Dependency.Google.GSON)
+}
+fun getApiKey(propertyKey: String): String {
+    val propFile = rootProject.file("./local.properties")
+    val properties = Properties()
+    properties.load(FileInputStream(propFile))
+    return properties.getProperty(propertyKey)
 }

@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.maps.android.compose.GoogleMap
 import com.tree.presentation.ui.theme.FiglinAceTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,30 +20,23 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FiglinAceTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android Figlin")
-                }
+                Greeting()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Greeting() {
+    GoogleMap(
+        modifier = Modifier.fillMaxSize()
+    ) {}
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     FiglinAceTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
