@@ -32,7 +32,6 @@ class LocationDataSourceImpl @Inject constructor(
                 override fun onLocationResult(locationResult: LocationResult) {
                     locationResult.locations.lastOrNull()?.let {
                         trySend(LatLng(it.latitude, it.longitude))
-                        Log.d("testt", "onLocationResult: $it")
                     }
                 }
             }

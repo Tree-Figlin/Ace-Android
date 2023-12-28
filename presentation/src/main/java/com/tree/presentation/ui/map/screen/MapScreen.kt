@@ -6,15 +6,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavController
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.google.accompanist.permissions.isGranted
-import com.google.accompanist.permissions.rememberMultiplePermissionsState
-import com.google.accompanist.permissions.shouldShowRationale
 import com.tree.presentation.ui.map.component.MapPreview
 import com.tree.presentation.viewmodel.MapViewModel
-import com.tree.presentation.viewmodel.PermissionEvent
 
-@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun MapScreen(
     navController: NavController,
@@ -36,9 +30,7 @@ fun MapScreen(
 
     MapPreview(
         navController = navController,
-        onLunched = {
-            viewModel.handle(PermissionEvent.Granted)
-        },
+        viewModel = viewModel,
         onBack = { onBack() }
         )
 }
