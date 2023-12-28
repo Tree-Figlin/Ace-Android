@@ -58,6 +58,8 @@ fun MapPreview(
                 isTrafficEnabled = true
             )
         ) {}
+
+        viewModel.getAiAnswer()
     } else {
         onBack()
     }

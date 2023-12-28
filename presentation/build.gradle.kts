@@ -71,6 +71,9 @@ dependencies {
     implementation(Dependency.Google.GMS_GOOGLE_MAP_LOCATION)
     implementation(Dependency.Google.GMS_GOOGLE_MAP_COMPSE)
 
+    //firebase
+    implementation(Dependency.Google.FIREBASE_DATABASE)
+
     //aac
     implementation(Dependency.AndroidX.APP_COMPAT)
     implementation(Dependency.AndroidX.CORE_KTX)

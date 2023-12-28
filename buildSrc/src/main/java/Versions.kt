@@ -39,6 +39,9 @@ object Versions {
     const val GMS_GOOGLE_MAP_LOCATION = "21.0.1"
     const val GMS_GOOGLE_MAP_COMPOSE = "2.9.0"
 
+    //firebase
+    const val FIREBASE_DATABASE = "20.3.0"
+
     //remote
     const val RETROFIT = "2.7.1"
     const val OKHTTP = "4.10.0"
