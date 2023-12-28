@@ -37,6 +37,8 @@ class MapViewModel @Inject constructor(
     )
     val ecoFriendlyLocation = _ecoFriendlyLocation.asStateFlow()
 
+    var resultLatLng = mutableStateOf(LatLng(0.0,0.0))
+
     private var _latitude: Double = 0.0
     private var _longitude: Double = 0.0
 

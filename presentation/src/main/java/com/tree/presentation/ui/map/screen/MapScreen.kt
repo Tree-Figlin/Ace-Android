@@ -1,6 +1,7 @@
 package com.tree.presentation.ui.map.screen
 
 import android.Manifest
+import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -59,7 +60,13 @@ fun MapScreen(
             )
             MapBottomSheet(
                 ecoFriendlyLocationState = ecoFriendlyLocationState,
-            ) {}
+                onLocationClick = {
+                    viewModel.resultLatLng.value = it
+                    Log.d("testt",it.toString())
+                    Log.d("testt",viewModel.resultLatLng.toString())
+                },
+                onFilterClick = {}
+            )
         }
     }
 }

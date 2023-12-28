@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.android.gms.maps.model.LatLng
 import com.tree.design_system.theme.AceTheme
 import com.tree.presentation.ui.map.component.MapFilterButton
 import com.tree.presentation.ui.map.component.MapResultItem
@@ -35,7 +36,8 @@ import com.tree.presentation.viewmodel.MapViewModel
 @Composable
 fun MapBottomSheet(
     ecoFriendlyLocationState: List<EcoFriendlyLocationData>,
-    onFilterClick: () -> Unit
+    onFilterClick: () -> Unit,
+    onLocationClick: (LatLng) -> Unit
 ) {
     Log.d("MapBottomSheet", "Recomposing with ${ecoFriendlyLocationState.size} items")
     AceTheme { colors, typography ->
@@ -73,7 +75,10 @@ fun MapBottomSheet(
                             MapResultItem(
                                 title = listItem.title!!,
                                 content = listItem.content!!
-                            ) {}
+                            ) {
+                                val latLng = LatLng(listItem.latitude!!,listItem.longitude!!)
+                                onLocationClick(latLng)
+                            }
 
                             Divider(
                                 modifier = Modifier

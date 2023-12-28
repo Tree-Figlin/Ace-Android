@@ -1,10 +1,12 @@
 package com.tree.presentation.ui.map.component
 
 import android.Manifest
+import android.util.Log
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -16,6 +18,8 @@ import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
+import com.google.maps.android.compose.Marker
+import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.tree.presentation.ui.map.component.bottomsheet.MapBottomSheet
 import com.tree.presentation.viewmodel.MapViewModel
@@ -30,6 +34,8 @@ fun MapPreview(
     onBack: () -> Unit,
     onGetResult: () -> Unit
 ) {
+    val locationState = viewModel.ecoFriendlyLocation.collectAsState()
+
     val cameraState = rememberCameraPositionState()
     var currentLocation: LatLng
     val permissionState = rememberMultiplePermissionsState(
@@ -47,6 +53,13 @@ fun MapPreview(
                 cameraState.centerOnLocation(currentLocation)
             }
         }
+        LaunchedEffect(viewModel.resultLatLng.value) {
+            Log.d("testt","launched")
+            if(viewModel.resultLatLng.value.latitude != 0.0 && viewModel.resultLatLng.value.longitude != 0.0) {
+                currentLocation = LatLng(viewModel.resultLatLng.value.latitude, viewModel.resultLatLng.value.longitude)
+                cameraState.centerOnLocation(currentLocation)
+            }
+        }
 
         GoogleMap(
             modifier = Modifier
@@ -58,7 +71,19 @@ fun MapPreview(
                 mapType = MapType.NORMAL,
                 isTrafficEnabled = true
             )
-        ) {}
+        ) {
+            locationState.value.forEach { locationData ->
+                locationData.latitude?.let { latitude ->
+                    locationData.longitude?.let { longitude ->
+                        Marker(
+                            state = MarkerState(position = LatLng(latitude, longitude)),
+                            title = locationData.title ?: "",
+                            snippet = locationData.content ?: ""
+                        )
+                    }
+                }
+            }
+        }
 
         viewModel.getResult()
     } else {
@@ -70,7 +95,7 @@ private suspend fun CameraPositionState.centerOnLocation(
     location: LatLng
 ) = animate(
     update = CameraUpdateFactory.newLatLngZoom(
-        location, 15f
+        location, 17f
     ),
     durationMs = 2500
 )
