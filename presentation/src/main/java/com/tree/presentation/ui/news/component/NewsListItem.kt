@@ -1,4 +1,4 @@
-package com.tree.presentation.ui.home.component
+package com.tree.presentation.ui.news.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,9 +26,10 @@ import coil.compose.AsyncImage
 import com.tree.design_system.theme.AceTheme
 
 @Composable
-fun HomeListItem(
+fun NewsListItem(
     title: String,
-    text: String,
+    date: String,
+    author: String,
     imageUrl: String,
     onItemClick: () -> Unit
 ) {
@@ -75,7 +76,7 @@ fun HomeListItem(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = text,
+                    text = "$date | $author",
                     style = typography.smallBody,
                     fontWeight = FontWeight.Normal,
                     color = colors.GREYSCALE3,
