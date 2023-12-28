@@ -33,7 +33,7 @@ fun SearchIcon() {
 fun NoSearchIcon() {
     Image(
         painter = painterResource(id = R.drawable.ic_no_search),
-        contentDescription = "NO Search Icon"
+        contentDescription = "No Search Icon"
     )
 }
 
@@ -50,6 +50,14 @@ fun DeleteIcon() {
     Image(
         painter = painterResource(id = R.drawable.ic_delete),
         contentDescription = "Delete Icon"
+    )
+}
+
+@Composable
+fun LinkIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_link),
+        contentDescription = "Link Icon"
     )
 }
 
