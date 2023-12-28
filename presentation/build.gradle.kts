@@ -21,11 +21,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        buildConfigField(
-            "String",
-            "GOOGLE_API_KEY",
-            getApiKey("GOOGLE_API_KEY")
-        )
     }
     buildTypes {
         release {
@@ -97,10 +92,4 @@ dependencies {
 
     //gson
     implementation(Dependency.Google.GSON)
-}
-fun getApiKey(propertyKey: String): String {
-    val propFile = rootProject.file("./local.properties")
-    val properties = Properties()
-    properties.load(FileInputStream(propFile))
-    return properties.getProperty(propertyKey)
 }
