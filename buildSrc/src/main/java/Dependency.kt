@@ -58,6 +58,9 @@ object Dependency {
         const val GMS_GOOGLE_MAP_COMPSE =
             "com.google.maps.android:maps-compose:${Versions.GMS_GOOGLE_MAP_COMPOSE}"
 
+        //firebase
+        const val FIREBASE_DATABASE = "com.google.firebase:firebase-database-ktx:${Versions.FIREBASE_DATABASE}"
+
         //hilt
         const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
         const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
