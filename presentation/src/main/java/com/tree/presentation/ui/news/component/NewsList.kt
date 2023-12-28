@@ -1,4 +1,4 @@
-package com.tree.presentation.ui.home.component
+package com.tree.presentation.ui.news.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.tree.design_system.theme.AceTheme
 
 @Composable
-fun HomeList(
+fun NewsList(
     list: List<String>,
     onItemClick: () -> Unit
 ) {
@@ -19,9 +19,10 @@ fun HomeList(
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(list.size) { index ->
                 val listItem = list[index]
-                HomeListItem(
+                NewsListItem(
                     title = listItem,
-                    text = listItem,
+                    date = listItem,
+                    author = listItem,
                     imageUrl = "",
                     onItemClick = { onItemClick() }
                 )

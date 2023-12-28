@@ -21,7 +21,9 @@ import com.tree.presentation.ui.home.component.HomeTitleText
 import com.tree.presentation.ui.home.component.HomeList
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onNewsClick: () -> Unit
+) {
     val scrollState = rememberScrollState()
 
     AceTheme { colors, typography ->
@@ -44,7 +46,7 @@ fun HomeScreen() {
                     Column {
                         HomeTitleText(
                             title = "\uD83D\uDCF0 오늘의 환경 뉴스",
-                            onDetailClick = {}
+                            onDetailClick = { onNewsClick() }
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         Box(modifier = Modifier.height(264.dp)) {

@@ -17,7 +17,6 @@ import androidx.navigation.compose.rememberNavController
 import com.tree.design_system.component.bottombar.AceBottomNavigationBar
 import com.tree.presentation.ui.base.BaseActivity
 import com.tree.presentation.ui.home.screen.HomeScreen
-import com.tree.presentation.ui.map.screen.MapScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 enum class MainPage(val value: String) {
@@ -50,10 +49,12 @@ class HomeActivity : BaseActivity() {
                     startDestination = MainPage.Home.name
                 ) {
                     composable(MainPage.Home.name) {
-                        HomeScreen()
+                        HomeScreen(
+                            onNewsClick = { navController.navigate(MainPage.News.value) }
+                        )
                     }
                     composable(MainPage.News.name) {
-                        Box(modifier = Modifier)
+                        NewsScreen()
                     }
                     composable(MainPage.Event.name) {
                         Box(modifier = Modifier)
