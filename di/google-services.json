@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "194134659396",
+    "project_id": "ace-android-6a469",
+    "storage_bucket": "ace-android-6a469.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194134659396:android:8e70b2f6941beda76dc711",
+        "android_client_info": {
+          "package_name": "com.tree.figlin_ace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAea6lisBkrQDINHvrL237frqHsYLNVDmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
