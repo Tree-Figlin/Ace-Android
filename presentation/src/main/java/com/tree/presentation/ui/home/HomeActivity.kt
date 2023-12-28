@@ -18,10 +18,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.tree.design_system.component.bottombar.AceBottomNavigationBar
+import com.tree.domain.model.news.response.ArticleListModel
 import com.tree.presentation.BuildConfig
 import com.tree.presentation.ui.base.BaseActivity
 import com.tree.presentation.ui.home.screen.HomeScreen
 import com.tree.presentation.ui.map.screen.MapScreen
+import com.tree.presentation.ui.news.screen.NewsDetailScreen
 import com.tree.presentation.ui.news.screen.NewsScreen
 import com.tree.presentation.viewmodel.NewsViewModel
 import com.tree.presentation.viewmodel.util.Event
@@ -37,10 +39,16 @@ enum class MainPage(val value: String) {
     Map("Map")
 }
 
+enum class SubPage(val value: String) {
+    NewsDetail("NewsDetail")
+}
+
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
     private val newsViewModel by viewModels<NewsViewModel>()
     private val mapViewModel by viewModels<MapViewModel>()
+
+    private lateinit var news: ArticleListModel
 
     override fun init() {
         installSplashScreen().apply {
@@ -79,7 +87,11 @@ class HomeActivity : BaseActivity() {
                     }
                     composable(MainPage.News.name) {
                         NewsScreen(
-                            viewModel = newsViewModel
+                            viewModel = newsViewModel,
+                            onItemClick = {
+                                news = it
+                                navController.navigate(SubPage.NewsDetail.value)
+                            }
                         )
                     }
                     composable(MainPage.Event.name) {
@@ -92,6 +104,13 @@ class HomeActivity : BaseActivity() {
                             onBack = {
                                 navController.popBackStack()
                             }
+                        )
+                    }
+                    composable(SubPage.NewsDetail.name) {
+                        NewsDetailScreen(
+                            context = this@HomeActivity,
+                            news = news,
+                            onBackClick = { navController.popBackStack() }
                         )
                     }
                 }

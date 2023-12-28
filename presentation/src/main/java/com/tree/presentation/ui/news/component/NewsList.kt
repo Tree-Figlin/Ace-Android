@@ -14,13 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.icon.NoSearchIcon
 import com.tree.design_system.theme.AceTheme
+import com.tree.domain.model.news.response.ArticleListModel
 import com.tree.presentation.ui.util.toDateString
 import com.tree.presentation.viewmodel.NewsViewModel
 
 @Composable
 fun NewsList(
     viewModel: NewsViewModel,
-    onItemClick: () -> Unit
+    onItemClick: (listItem: ArticleListModel) -> Unit
 ) {
     AceTheme { colors, typography ->
         if (viewModel.news.size != 0) {
@@ -32,7 +33,7 @@ fun NewsList(
                         date = listItem.publishedAt.toDateString(),
                         author = listItem.author ?: "",
                         imageUrl = listItem.urlToImage ?: "",
-                        onItemClick = { onItemClick() }
+                        onItemClick = { onItemClick(listItem) }
                     )
                     Divider(
                         modifier = Modifier
