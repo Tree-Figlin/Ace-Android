@@ -50,4 +50,10 @@ object Versions {
 
     //navigation
     const val NAVIGATION = "2.6.0"
+
+    //coil
+    const val COIL_VERSION = "2.4.0"
+
+    //splash
+    const val SPLASH = "1.0.1"
 }
