@@ -30,6 +30,14 @@ fun SearchIcon() {
 }
 
 @Composable
+fun NoSearchIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_no_search),
+        contentDescription = "NO Search Icon"
+    )
+}
+
+@Composable
 fun BackIcon() {
     Image(
         painter = painterResource(id = R.drawable.ic_back),
@@ -86,6 +94,21 @@ fun EventIcon(isClick: Boolean = false) {
         Image(
             painter = painterResource(id = R.drawable.ic_event),
             contentDescription = "Event Icon"
+        )
+    }
+}
+
+@Composable
+fun MapIcon(isClick: Boolean = false) {
+    if (isClick) {
+        Image(
+            painter = painterResource(id = R.drawable.ic_map_click),
+            contentDescription = "Map Click Icon"
+        )
+    } else {
+        Image(
+            painter = painterResource(id = R.drawable.ic_map),
+            contentDescription = "Map Icon"
         )
     }
 }
