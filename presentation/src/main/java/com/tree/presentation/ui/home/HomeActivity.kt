@@ -17,12 +17,17 @@ import androidx.navigation.compose.rememberNavController
 import com.tree.design_system.component.bottombar.AceBottomNavigationBar
 import com.tree.presentation.ui.base.BaseActivity
 import com.tree.presentation.ui.home.screen.HomeScreen
+import com.tree.presentation.ui.map.screen.MapScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 enum class MainPage(val value: String) {
     Home("Home"),
     News("News"),
     Event("Event")
+}
+
+enum class SubPage(val value: String) {
+    Map("Map")
 }
 
 @AndroidEntryPoint
@@ -52,6 +57,9 @@ class HomeActivity : BaseActivity() {
                     }
                     composable(MainPage.Event.name) {
                         Box(modifier = Modifier)
+                    }
+                    composable(SubPage.Map.name) {
+                        MapScreen()
                     }
                 }
                 AceBottomNavigationBar(
