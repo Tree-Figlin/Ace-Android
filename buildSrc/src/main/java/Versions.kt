@@ -1,5 +1,3 @@
-import org.gradle.api.JavaVersion
-
 object Versions {
     //gradle
     const val GRADLE_ANDROID = "7.4.2"
@@ -37,7 +35,7 @@ object Versions {
     const val GMS_GOOGLE_SERVICE = "4.3.15"
     const val GMS_GOOGLE_MAP_PULGIN = "2.0.1"
     const val GMS_GOOGLE_MAP = "18.1.0"
-    const val GSM_GOOGLE_MAP_LOCATION = "21.0.1"
+    const val GMS_GOOGLE_MAP_LOCATION = "21.0.1"
     const val GMS_GOOGLE_MAP_COMPOSE = "2.9.0"
 
     //remote

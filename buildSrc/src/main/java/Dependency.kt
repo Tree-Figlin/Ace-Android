@@ -51,7 +51,7 @@ object Dependency {
         const val GMS_GOOGLE_MAP =
             "com.google.android.gms:play-services-maps:${Versions.GMS_GOOGLE_MAP}"
         const val GMS_GOOGLE_MAP_LOCATION =
-            "com.google.android.gms:play-services-location:${Versions.GSM_GOOGLE_MAP_LOCATION}"
+            "com.google.android.gms:play-services-location:${Versions.GMS_GOOGLE_MAP_LOCATION}"
         const val GMS_GOOGLE_MAP_COMPSE =
             "com.google.maps.android:maps-compose:${Versions.GMS_GOOGLE_MAP_COMPOSE}"
 
