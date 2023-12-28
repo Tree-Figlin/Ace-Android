@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.component.text.AceTitleText
 import com.tree.presentation.ui.event.component.EventList
+import com.tree.presentation.ui.event.data.EventListItem
+import com.tree.presentation.ui.event.data.list
 
 @Composable
 fun EventScreen() {
@@ -26,7 +28,7 @@ fun EventScreen() {
         }
         Column(modifier = Modifier.padding(horizontal = 16.dp)) {
             EventList(
-                list = listOf("첫번째", "두번째", "세번째", "네번째"),
+                list = list,
                 onItemClick = {}
             )
         }

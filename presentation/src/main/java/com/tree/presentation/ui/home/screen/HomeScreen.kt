@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.tree.design_system.component.text.AceLogoTitleText
 import com.tree.design_system.theme.AceTheme
 import com.tree.presentation.BuildConfig
+import com.tree.presentation.ui.event.data.list
 import com.tree.presentation.ui.home.component.HomeTitleText
 import com.tree.presentation.ui.home.component.HomeList
 import com.tree.presentation.viewmodel.NewsViewModel
@@ -73,6 +74,7 @@ fun HomeScreen(
                             HomeList(
                                 isNews = true,
                                 newsViewModel = newsViewModel,
+                                list = list,
                                 onItemClick = {}
                             )
                         }
@@ -96,6 +98,7 @@ fun HomeScreen(
                             HomeList(
                                 isNews = false,
                                 newsViewModel = newsViewModel,
+                                list = list,
                                 onItemClick = {}
                             )
                         }

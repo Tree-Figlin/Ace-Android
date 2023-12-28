@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.theme.AceTheme
+import com.tree.presentation.ui.event.data.EventListItem
 import com.tree.presentation.ui.util.toDateString
 import com.tree.presentation.viewmodel.NewsViewModel
 
@@ -16,6 +17,7 @@ import com.tree.presentation.viewmodel.NewsViewModel
 fun HomeList(
     isNews: Boolean,
     newsViewModel: NewsViewModel,
+    list: List<EventListItem>,
     onItemClick: () -> Unit
 ) {
     AceTheme { colors, typography ->
@@ -27,6 +29,21 @@ fun HomeList(
                         title = listItem.title,
                         text = "${listItem.publishedAt.toDateString()} | ${listItem.author}",
                         imageUrl = listItem.urlToImage ?: "",
+                        onItemClick = { onItemClick() }
+                    )
+                    Divider(
+                        modifier = Modifier
+                            .height(1.dp)
+                            .background(colors.BLACK.copy(0.1f))
+                    )
+                }
+            } else {
+                items(list.size) { index ->
+                    val listItem = list[index]
+                    HomeListItem(
+                        title = listItem.title,
+                        text = listItem.date,
+                        imageUrl = listItem.imageUrl,
                         onItemClick = { onItemClick() }
                     )
                     Divider(

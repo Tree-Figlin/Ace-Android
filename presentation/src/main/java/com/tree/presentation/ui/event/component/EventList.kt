@@ -15,12 +15,13 @@ import androidx.compose.ui.unit.dp
 import com.tree.design_system.icon.NoSearchIcon
 import com.tree.design_system.theme.AceTheme
 import com.tree.domain.model.news.response.ArticleListModel
+import com.tree.presentation.ui.event.data.EventListItem
 import com.tree.presentation.ui.util.toDateString
 import com.tree.presentation.viewmodel.NewsViewModel
 
 @Composable
 fun EventList(
-    list: List<String>,
+    list: List<EventListItem>,
     onItemClick: () -> Unit
 ) {
     AceTheme { colors, typography ->
@@ -28,9 +29,9 @@ fun EventList(
             items(list.size) { index ->
                 val listItem = list[index]
                 EventListItem(
-                    title = listItem,
-                    date = listItem,
-                    imageUrl = listItem,
+                    title = listItem.title,
+                    date = listItem.date,
+                    imageUrl = listItem.imageUrl,
                     onItemClick = { onItemClick() }
                 )
                 Divider(
