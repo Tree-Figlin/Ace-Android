@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -27,6 +28,7 @@ enum class MainPage(val value: String) {
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
     override fun init() {
+        installSplashScreen()
         setContent {
             val navController = rememberNavController()
             val navBackStackEntry by navController.currentBackStackEntryAsState()
