@@ -22,6 +22,14 @@ fun NextIcon() {
 }
 
 @Composable
+fun SearchIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_search),
+        contentDescription = "Search Icon"
+    )
+}
+
+@Composable
 fun NewsIcon(isClick: Boolean = false) {
     if (isClick) {
         Image(
