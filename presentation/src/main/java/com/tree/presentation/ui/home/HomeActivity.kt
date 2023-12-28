@@ -1,13 +1,11 @@
 package com.tree.presentation.ui.home
 
-import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,6 +21,7 @@ import com.tree.presentation.BuildConfig
 import com.tree.presentation.ui.base.BaseActivity
 import com.tree.presentation.ui.event.screen.EventScreen
 import com.tree.presentation.ui.home.screen.HomeScreen
+import com.tree.presentation.ui.intro.screen.IntroScreen
 import com.tree.presentation.ui.map.screen.MapScreen
 import com.tree.presentation.ui.news.screen.NewsDetailScreen
 import com.tree.presentation.ui.news.screen.NewsScreen
@@ -30,7 +29,6 @@ import com.tree.presentation.viewmodel.NewsViewModel
 import com.tree.presentation.viewmodel.util.Event
 import com.tree.presentation.viewmodel.MapViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 enum class MainPage(val value: String) {
@@ -38,6 +36,10 @@ enum class MainPage(val value: String) {
     News("News"),
     Event("Event"),
     Map("Map")
+}
+
+enum class SplashPage(val value: String) {
+    Intro("Intro")
 }
 
 enum class SubPage(val value: String) {
@@ -50,6 +52,7 @@ class HomeActivity : BaseActivity() {
     private val mapViewModel by viewModels<MapViewModel>()
 
     private lateinit var news: ArticleListModel
+    private var isIntro: Boolean = false
 
     override fun init() {
         installSplashScreen().apply {
@@ -80,7 +83,22 @@ class HomeActivity : BaseActivity() {
                     navController = navController,
                     startDestination = MainPage.Home.name
                 ) {
+                    composable(SplashPage.Intro.name) {
+                        IntroScreen(
+                            onHomeClick = {
+                                navController.navigate(MainPage.Home.value) {
+                                    popUpTo(MainPage.Home.value) {
+                                        inclusive = true
+                                    }
+                                }
+                            }
+                        )
+                    }
                     composable(MainPage.Home.name) {
+                        if(!isIntro) {
+                            navController.navigate(SplashPage.Intro.value)
+                            isIntro = true
+                        }
                         HomeScreen(
                             newsViewModel = newsViewModel,
                             onNewsClick = { navController.navigate(MainPage.News.value) },

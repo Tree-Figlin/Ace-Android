@@ -8,8 +8,8 @@ import com.tree.design_system.R
 @Composable
 fun AceLogoIcon() {
     Image(
-        painter = painterResource(id = R.drawable.ic_logo),
-        contentDescription = "Logo Icon"
+        painter = painterResource(id = R.drawable.ic_ace_logo),
+        contentDescription = "Ace Logo Icon"
     )
 }
 
