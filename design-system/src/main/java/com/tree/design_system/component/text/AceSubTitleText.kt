@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.tree.design_system.theme.AceTheme
 
 @Composable
-fun AceTitleText(
+fun AceSubTitleText(
     modifier: Modifier,
     text: String
 ) {
@@ -22,8 +22,8 @@ fun AceTitleText(
         ) {
             Text(
                 text = text,
-                style = typography.mediumTitle,
-                fontWeight = FontWeight.SemiBold,
+                style = typography.smallTitle,
+                fontWeight = FontWeight.Normal,
                 color = colors.BLACK
             )
         }

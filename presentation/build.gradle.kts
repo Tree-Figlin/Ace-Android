@@ -22,6 +22,12 @@ android {
             useSupportLibrary = true
         }
         manifestPlaceholders["googleMapApiKey"] = getApiKey("GOOGLE_API_KEY")
+
+        buildConfigField(
+            "String",
+            "NEWS_API_KEY",
+            getApiKey("NEWS_API_KEY")
+        )
     }
     buildTypes {
         release {
@@ -100,6 +106,7 @@ dependencies {
     //splash
     implementation(Dependency.AndroidX.SPLASH)
 }
+
 fun getApiKey(propertyKey: String): String {
     val propFile = rootProject.file("./local.properties")
     val properties = Properties()

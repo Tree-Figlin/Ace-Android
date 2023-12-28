@@ -22,6 +22,46 @@ fun NextIcon() {
 }
 
 @Composable
+fun SearchIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_search),
+        contentDescription = "Search Icon"
+    )
+}
+
+@Composable
+fun NoSearchIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_no_search),
+        contentDescription = "No Search Icon"
+    )
+}
+
+@Composable
+fun BackIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_back),
+        contentDescription = "Back Icon"
+    )
+}
+
+@Composable
+fun DeleteIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_delete),
+        contentDescription = "Delete Icon"
+    )
+}
+
+@Composable
+fun LinkIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_link),
+        contentDescription = "Link Icon"
+    )
+}
+
+@Composable
 fun NewsIcon(isClick: Boolean = false) {
     if (isClick) {
         Image(
@@ -62,6 +102,21 @@ fun EventIcon(isClick: Boolean = false) {
         Image(
             painter = painterResource(id = R.drawable.ic_event),
             contentDescription = "Event Icon"
+        )
+    }
+}
+
+@Composable
+fun MapIcon(isClick: Boolean = false) {
+    if (isClick) {
+        Image(
+            painter = painterResource(id = R.drawable.ic_map_click),
+            contentDescription = "Map Click Icon"
+        )
+    } else {
+        Image(
+            painter = painterResource(id = R.drawable.ic_map),
+            contentDescription = "Map Icon"
         )
     }
 }
