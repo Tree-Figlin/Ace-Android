@@ -1,5 +1,6 @@
 package com.tree.presentation.ui.home
 
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
@@ -30,7 +31,8 @@ import kotlinx.coroutines.launch
 enum class MainPage(val value: String) {
     Home("Home"),
     News("News"),
-    Event("Event")
+    Event("Event"),
+    Map("Map")
 }
 
 @AndroidEntryPoint
@@ -43,6 +45,7 @@ class HomeActivity : BaseActivity() {
                 newsViewModel.newsResponse.value is Event.Loading
             }
         }
+        newsViewModel.news(query = "Environment", apiKey = BuildConfig.NEWS_API_KEY)
         lifecycleScope.launch {
             newsViewModel.newsResponse.collect {
                 if (it is Event.Success) {
@@ -51,10 +54,6 @@ class HomeActivity : BaseActivity() {
             }
         }
         setContent {
-            LaunchedEffect("start") {
-                delay(5000L)
-                newsViewModel.news(query = "Environment", apiKey = BuildConfig.NEWS_API_KEY)
-            }
             val navController = rememberNavController()
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentRoute = navBackStackEntry?.destination?.route
@@ -83,6 +82,9 @@ class HomeActivity : BaseActivity() {
                     composable(MainPage.Event.name) {
                         Box(modifier = Modifier)
                     }
+                    composable(MainPage.Map.name) {
+                        Box(modifier = Modifier)
+                    }
                 }
                 AceBottomNavigationBar(
                     modifier = Modifier.align(Alignment.BottomCenter),
@@ -90,7 +92,8 @@ class HomeActivity : BaseActivity() {
                     currentRoute = currentRoute ?: "Home",
                     onNewsClick = { navController.navigate(MainPage.News.value) },
                     onHomeClick = { navController.navigate(MainPage.Home.value) },
-                    onEventClick = { navController.navigate(MainPage.Event.value) }
+                    onEventClick = { navController.navigate(MainPage.Event.value) },
+                    onMapClick = { navController.navigate(MainPage.Map.value) }
                 )
             }
         }
