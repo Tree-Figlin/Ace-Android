@@ -15,6 +15,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.tree.design_system.component.bottombar.AceBottomNavigationBar
 import com.tree.presentation.ui.base.BaseActivity
+import com.tree.presentation.ui.home.screen.HomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 enum class MainPage(val value: String) {
@@ -42,7 +43,7 @@ class HomeActivity : BaseActivity() {
                     startDestination = MainPage.Home.name
                 ) {
                     composable(MainPage.Home.name) {
-                        Box(modifier = Modifier)
+                        HomeScreen()
                     }
                     composable(MainPage.News.name) {
                         Box(modifier = Modifier)

@@ -93,6 +93,9 @@ dependencies {
 
     //gson
     implementation(Dependency.Google.GSON)
+
+    //coil
+    implementation(Dependency.Image.COIL)
 }
 fun getApiKey(propertyKey: String): String {
     val propFile = rootProject.file("./local.properties")
