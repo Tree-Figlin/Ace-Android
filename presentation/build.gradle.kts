@@ -21,11 +21,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        buildConfigField(
-            "String",
-            "GOOGLE_API_KEY",
-            getApiKey("GOOGLE_API_KEY")
-        )
+        manifestPlaceholders["googleMapApiKey"] = getApiKey("GOOGLE_API_KEY")
     }
     buildTypes {
         release {
