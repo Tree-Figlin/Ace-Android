@@ -7,6 +7,9 @@ object Dependency {
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
         const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
         const val PREFERENCE_KTX = "androidx.preference:preference-ktx:${Versions.PREFERENCE_KTX}"
+
+        //splash
+        const val SPLASH = "androidx.core:core-splashscreen:${Versions.SPLASH}"
     }
 
     object Compose {

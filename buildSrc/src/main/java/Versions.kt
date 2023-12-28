@@ -53,4 +53,7 @@ object Versions {
 
     //coil
     const val COIL_VERSION = "2.4.0"
+
+    //splash
+    const val SPLASH = "1.0.1"
 }
