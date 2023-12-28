@@ -24,8 +24,10 @@ import com.tree.presentation.viewmodel.NewsViewModel
 
 @Composable
 fun HomeScreen(
+    newsViewModel: NewsViewModel,
     onNewsClick: () -> Unit,
-    newsViewModel: NewsViewModel
+    onEventClick: () -> Unit,
+    onMapClick: () -> Unit
 ) {
     val scrollState = rememberScrollState()
 
@@ -41,6 +43,19 @@ fun HomeScreen(
             AceLogoTitleText()
             Spacer(modifier = Modifier.height(8.dp))
             Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(shape = RoundedCornerShape(12.dp))
+                        .background(colors.WHITE)
+                        .padding(16.dp)
+                ) {
+                    HomeTitleText(
+                        title = "신재생 에너지 시설 찾아보기",
+                        onDetailClick = { onMapClick() }
+                    )
+                }
+                Spacer(modifier = Modifier.height(16.dp))
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -74,7 +89,7 @@ fun HomeScreen(
                     Column {
                         HomeTitleText(
                             title = "\uD83C\uDF89 곧 열리는 환경 이벤트",
-                            onDetailClick = {}
+                            onDetailClick = { onEventClick() }
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         Box(modifier = Modifier.height(264.dp)) {
@@ -85,32 +100,6 @@ fun HomeScreen(
                             )
                         }
                     }
-                }
-                Spacer(modifier = Modifier.height(16.dp))
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(shape = RoundedCornerShape(12.dp))
-                        .background(colors.WHITE)
-                        .padding(16.dp)
-                ) {
-                    HomeTitleText(
-                        title = "신재생 에너지 발전소 찾아보기",
-                        onDetailClick = {}
-                    )
-                }
-                Spacer(modifier = Modifier.height(16.dp))
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(shape = RoundedCornerShape(12.dp))
-                        .background(colors.WHITE)
-                        .padding(16.dp)
-                ) {
-                    HomeTitleText(
-                        title = "신재생 에너지 체험관 찾아보기",
-                        onDetailClick = {}
-                    )
                 }
             }
         }
