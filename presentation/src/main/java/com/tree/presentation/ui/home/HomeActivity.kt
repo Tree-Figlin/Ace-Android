@@ -21,9 +21,11 @@ import com.tree.design_system.component.bottombar.AceBottomNavigationBar
 import com.tree.presentation.BuildConfig
 import com.tree.presentation.ui.base.BaseActivity
 import com.tree.presentation.ui.home.screen.HomeScreen
+import com.tree.presentation.ui.map.screen.MapScreen
 import com.tree.presentation.ui.news.screen.NewsScreen
 import com.tree.presentation.viewmodel.NewsViewModel
 import com.tree.presentation.viewmodel.util.Event
+import com.tree.presentation.viewmodel.MapViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -38,6 +40,7 @@ enum class MainPage(val value: String) {
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
     private val newsViewModel by viewModels<NewsViewModel>()
+    private val mapViewModel by viewModels<MapViewModel>()
 
     override fun init() {
         installSplashScreen().apply {
@@ -80,10 +83,16 @@ class HomeActivity : BaseActivity() {
                         )
                     }
                     composable(MainPage.Event.name) {
-                        Box(modifier = Modifier)
+
                     }
                     composable(MainPage.Map.name) {
-                        Box(modifier = Modifier)
+                        MapScreen(
+                            navController = navController,
+                            viewModel = mapViewModel,
+                            onBack = {
+                                navController.popBackStack()
+                            }
+                        )
                     }
                 }
                 AceBottomNavigationBar(
