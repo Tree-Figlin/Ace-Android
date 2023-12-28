@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.icon.EventIcon
 import com.tree.design_system.icon.HomeIcon
+import com.tree.design_system.icon.MapIcon
 import com.tree.design_system.icon.NewsIcon
 import com.tree.design_system.theme.AceTheme
 
@@ -36,7 +37,8 @@ fun AceBottomNavigationBar(
     currentRoute: String,
     onNewsClick: () -> Unit,
     onHomeClick: () -> Unit,
-    onEventClick: () -> Unit
+    onEventClick: () -> Unit,
+    onMapClick: () -> Unit
 ) {
     if (isVisible) {
         AceTheme { colors, typography ->
@@ -77,24 +79,6 @@ fun AceBottomNavigationBar(
                             .clickable(
                                 indication = null,
                                 interactionSource = remember { MutableInteractionSource() }
-                            ) { onNewsClick() },
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                    ) {
-                        NewsIcon(isClick = currentRoute == "News")
-                        Spacer(modifier = Modifier.height(4.dp))
-                        Text(
-                            text = "검색",
-                            style = typography.caption,
-                            color = if (currentRoute == "News") colors.PRIMARY else colors.GREYSCALE3,
-                            fontWeight = FontWeight.Normal
-                        )
-                    }
-                    Column(
-                        modifier = Modifier
-                            .width(48.dp)
-                            .clickable(
-                                indication = null,
-                                interactionSource = remember { MutableInteractionSource() }
                             ) { onHomeClick() },
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
@@ -104,6 +88,24 @@ fun AceBottomNavigationBar(
                             text = "홈",
                             style = typography.caption,
                             color = if (currentRoute == "Home") colors.PRIMARY else colors.GREYSCALE3,
+                            fontWeight = FontWeight.Normal
+                        )
+                    }
+                    Column(
+                        modifier = Modifier
+                            .width(48.dp)
+                            .clickable(
+                                indication = null,
+                                interactionSource = remember { MutableInteractionSource() }
+                            ) { onNewsClick() },
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        NewsIcon(isClick = currentRoute == "News")
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "검색",
+                            style = typography.caption,
+                            color = if (currentRoute == "News") colors.PRIMARY else colors.GREYSCALE3,
                             fontWeight = FontWeight.Normal
                         )
                     }
@@ -125,6 +127,24 @@ fun AceBottomNavigationBar(
                             fontWeight = FontWeight.Normal
                         )
                     }
+                    Column(
+                        modifier = Modifier
+                            .width(48.dp)
+                            .clickable(
+                                indication = null,
+                                interactionSource = remember { MutableInteractionSource() }
+                            ) { onMapClick() },
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        MapIcon(isClick = currentRoute == "Map")
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "지도",
+                            style = typography.caption,
+                            color = if (currentRoute == "Map") colors.PRIMARY else colors.GREYSCALE3,
+                            fontWeight = FontWeight.Normal
+                        )
+                    }
                 }
             }
         }
@@ -140,6 +160,7 @@ fun AceBottomNavigationBarPreView() {
         currentRoute = "",
         onNewsClick = {},
         onHomeClick = {},
-        onEventClick = {}
+        onEventClick = {},
+        onMapClick = {}
     )
 }
