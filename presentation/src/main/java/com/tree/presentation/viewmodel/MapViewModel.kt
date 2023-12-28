@@ -1,6 +1,7 @@
 package com.tree.presentation.viewmodel
 
 import android.util.Log
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.maps.model.LatLng
@@ -45,7 +46,7 @@ class MapViewModel @Inject constructor(
     val longitude: Double
         get() = _longitude
 
-    fun handle(event: PermissionEvent) {
+    fun getUserLocation(event: PermissionEvent) {
         when (event) {
             PermissionEvent.Granted -> {
                 viewModelScope.launch {
@@ -66,7 +67,7 @@ class MapViewModel @Inject constructor(
         }
     }
 
-    fun getAiAnswer() {
+    fun getResult() {
         val query: Query = getMessageQuery()
         val valueEventListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

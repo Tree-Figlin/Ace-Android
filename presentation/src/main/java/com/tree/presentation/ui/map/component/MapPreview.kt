@@ -1,13 +1,12 @@
 package com.tree.presentation.ui.map.component
 
 import android.Manifest
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
@@ -17,9 +16,8 @@ import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
-import com.google.maps.android.compose.Marker
-import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
+import com.tree.presentation.ui.map.component.bottomsheet.MapBottomSheet
 import com.tree.presentation.viewmodel.MapViewModel
 import com.tree.presentation.viewmodel.PermissionEvent
 import kotlinx.coroutines.delay
@@ -29,7 +27,8 @@ import kotlinx.coroutines.delay
 fun MapPreview(
     navController: NavController,
     viewModel: MapViewModel,
-    onBack: () -> Unit
+    onBack: () -> Unit,
+    onGetResult: () -> Unit
 ) {
     val cameraState = rememberCameraPositionState()
     var currentLocation: LatLng
@@ -40,7 +39,7 @@ fun MapPreview(
         )
     )
     if(permissionState.allPermissionsGranted) {
-        viewModel.handle(PermissionEvent.Granted)
+        viewModel.getUserLocation(PermissionEvent.Granted)
 
         LaunchedEffect(viewModel.latitude, viewModel.longitude) {
             if(viewModel.latitude != 0.0 && viewModel.longitude != 0.0) {
@@ -50,7 +49,9 @@ fun MapPreview(
         }
 
         GoogleMap(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(312.dp),
             cameraPositionState = cameraState,
             properties = MapProperties(
                 isMyLocationEnabled = true,
@@ -59,7 +60,7 @@ fun MapPreview(
             )
         ) {}
 
-        viewModel.getAiAnswer()
+        viewModel.getResult()
     } else {
         onBack()
     }

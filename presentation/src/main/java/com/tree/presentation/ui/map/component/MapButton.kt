@@ -2,9 +2,11 @@ package com.tree.presentation.ui.map.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
@@ -45,29 +47,25 @@ fun MapFilterButton(
     onClick: () -> Unit
 ) {
     AceTheme { colors, typography ->
-        Button(
-            modifier = Modifier.size(100.dp,44.dp),
-            elevation = null,
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.Transparent
-            ),
-            onClick = { onClick() }
+        Row(
+            modifier = Modifier
+                .size(100.dp,36.dp)
+                .clickable {
+                    onClick()
+                },
+            verticalAlignment = Alignment.Top,
+
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Image(
-                    painter = painterResource(id = com.tree.design_system.R.drawable.ic_map_filter),
-                    contentDescription = "filter"
-                )
-                Text(
-                    text = "필터",
-                    style = typography.smallButton,
-                    fontWeight = FontWeight.Medium,
-                    color = colors.BULE1
-                )
-            }
+            Image(
+                painter = painterResource(id = com.tree.design_system.R.drawable.ic_map_filter),
+                contentDescription = "filter"
+            )
+            Text(
+                text = "필터",
+                style = typography.smallButton,
+                fontWeight = FontWeight.Medium,
+                color = colors.BULE1
+            )
         }
     }
 }

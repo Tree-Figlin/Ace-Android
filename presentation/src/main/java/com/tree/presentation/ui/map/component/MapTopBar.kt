@@ -24,6 +24,7 @@ fun MapTopBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .background(colors.WHITE)
                 .height(60.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
