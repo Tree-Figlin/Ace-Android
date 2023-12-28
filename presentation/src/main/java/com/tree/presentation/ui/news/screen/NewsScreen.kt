@@ -1,14 +1,10 @@
 package com.tree.presentation.ui.news.screen
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,22 +12,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.component.botton.AceBackButton
 import com.tree.design_system.component.botton.SearchButton
 import com.tree.design_system.component.text.AceTitleText
 import com.tree.design_system.component.textfield.AceSearchTextField
-import com.tree.design_system.icon.NoSearchIcon
+import com.tree.domain.model.news.response.ArticleListModel
 import com.tree.presentation.BuildConfig
 import com.tree.presentation.ui.news.component.NewsList
-import com.tree.presentation.ui.news.component.NoSearchText
 import com.tree.presentation.viewmodel.NewsViewModel
-import kotlinx.coroutines.launch
 
 @Composable
 fun NewsScreen(
-    viewModel: NewsViewModel
+    viewModel: NewsViewModel,
+    onItemClick: (listItem: ArticleListModel) -> Unit
 ) {
     var isSearch by remember { mutableStateOf(false) }
     var search by remember { mutableStateOf("") }
@@ -74,7 +68,9 @@ fun NewsScreen(
         Column(modifier = Modifier.padding(horizontal = 16.dp)) {
             NewsList(
                 viewModel = viewModel,
-                onItemClick = {}
+                onItemClick = { listItem ->
+                    onItemClick(listItem)
+                }
             )
         }
     }
