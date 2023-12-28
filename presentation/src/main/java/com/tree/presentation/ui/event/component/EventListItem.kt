@@ -75,7 +75,7 @@ fun EventListItem(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "일정 | $date",
+                    text = date,
                     style = typography.smallBody,
                     fontWeight = FontWeight.Normal,
                     color = colors.GREYSCALE3,
