@@ -47,6 +47,14 @@ object Dependency {
         const val GMS_GOOGLE_SERVICE =
             "com.google.gms:google-services:${Versions.GMS_GOOGLE_SERVICE}"
 
+        //google map
+        const val GMS_GOOGLE_MAP =
+            "com.google.android.gms:play-services-maps:${Versions.GMS_GOOGLE_MAP}"
+        const val GMS_GOOGLE_MAP_LOCATION =
+            "com.google.android.gms:play-services-location:${Versions.GSM_GOOGLE_MAP_LOCATION}"
+        const val GMS_GOOGLE_MAP_COMPSE =
+            "com.google.maps.android:maps-compose:${Versions.GMS_GOOGLE_MAP_COMPOSE}"
+
         //hilt
         const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
         const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"

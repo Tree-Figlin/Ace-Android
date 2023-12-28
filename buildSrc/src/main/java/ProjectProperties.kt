@@ -22,6 +22,7 @@ object ProjectProperties {
         const val HILT = "com.google.dagger.hilt.android"
         const val KAPT = "kapt"
         const val GMS_GOOGLE_SERVICE = "com.google.gms.google-services"
+        const val GMS_GOOGLE_MAP = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
 
         const val DI = "com.tree.figlin_ace"
         const val DATA = "com.tree.data"

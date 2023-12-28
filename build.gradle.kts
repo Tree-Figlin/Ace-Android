@@ -5,4 +5,5 @@ plugins {
     id(ProjectProperties.Gradle.KOTLIN) version Versions.GRADLE_KOTLIN apply false
     id(ProjectProperties.Gradle.HILT) version Versions.HILT apply false
     id(ProjectProperties.Gradle.GMS_GOOGLE_SERVICE) version Versions.GMS_GOOGLE_SERVICE apply false
+    id(ProjectProperties.Gradle.GMS_GOOGLE_MAP) version Versions.GMS_GOOGLE_MAP_PULGIN apply false
 }

@@ -26,10 +26,6 @@ object Versions {
 
     const val LIFECYCLE_KTX = "2.3.1"
 
-    const val ROOM = "2.3.0"
-
-    const val CAMERA = "1.3.0-beta01"
-
     //hilt
     const val HILT = "2.45"
 
@@ -39,6 +35,10 @@ object Versions {
     //googlePlay
     const val GMS_PLAY_SERVICE_AUTH = "19.0.0"
     const val GMS_GOOGLE_SERVICE = "4.3.15"
+    const val GMS_GOOGLE_MAP_PULGIN = "2.0.1"
+    const val GMS_GOOGLE_MAP = "18.1.0"
+    const val GSM_GOOGLE_MAP_LOCATION = "21.0.1"
+    const val GMS_GOOGLE_MAP_COMPOSE = "2.9.0"
 
     //remote
     const val RETROFIT = "2.7.1"
