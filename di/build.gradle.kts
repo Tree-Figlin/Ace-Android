@@ -50,6 +50,10 @@ dependencies {
     implementation(Dependency.Google.HILT_ANDROID)
     kapt(Dependency.Google.HILT_ANDROID_COMPILER)
 
+    //google map
+    implementation(Dependency.Google.GMS_GOOGLE_MAP)
+    implementation(Dependency.Google.GMS_GOOGLE_MAP_LOCATION)
+
     //androidx
     implementation(Dependency.AndroidX.CORE_KTX)
     implementation(Dependency.AndroidX.APP_COMPAT)

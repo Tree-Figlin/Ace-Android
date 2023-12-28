@@ -41,6 +41,10 @@ dependencies {
     implementation(Dependency.Google.HILT_ANDROID)
     kapt(Dependency.Google.HILT_ANDROID_COMPILER)
 
+    //google map
+    implementation(Dependency.Google.GMS_GOOGLE_MAP)
+    implementation(Dependency.Google.GMS_GOOGLE_MAP_LOCATION)
+
     //unitTest
     testImplementation(Dependency.Test.JUNIT)
 
