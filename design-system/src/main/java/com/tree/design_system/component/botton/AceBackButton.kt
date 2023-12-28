@@ -2,11 +2,11 @@ package com.tree.design_system.component.botton
 
 import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
-import com.tree.design_system.icon.SearchIcon
+import com.tree.design_system.icon.BackIcon
 
 @Composable
-fun SearchButton(onClick: () -> Unit) {
+fun AceBackButton(onClick: () -> Unit) {
     IconButton(onClick = { onClick() }) {
-        SearchIcon()
+        BackIcon()
     }
 }

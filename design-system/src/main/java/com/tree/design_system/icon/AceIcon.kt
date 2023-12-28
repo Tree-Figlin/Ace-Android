@@ -30,6 +30,22 @@ fun SearchIcon() {
 }
 
 @Composable
+fun BackIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_back),
+        contentDescription = "Back Icon"
+    )
+}
+
+@Composable
+fun DeleteIcon() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_delete),
+        contentDescription = "Delete Icon"
+    )
+}
+
+@Composable
 fun NewsIcon(isClick: Boolean = false) {
     if (isClick) {
         Image(
