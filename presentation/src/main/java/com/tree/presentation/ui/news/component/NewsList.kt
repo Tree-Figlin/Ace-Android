@@ -9,21 +9,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.theme.AceTheme
+import com.tree.presentation.ui.util.toDateString
+import com.tree.presentation.viewmodel.NewsViewModel
 
 @Composable
 fun NewsList(
-    list: List<String>,
+    viewModel: NewsViewModel,
     onItemClick: () -> Unit
 ) {
     AceTheme { colors, typography ->
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(list.size) { index ->
-                val listItem = list[index]
+            items(viewModel.news.size) { index ->
+                val listItem = viewModel.news[index]
                 NewsListItem(
-                    title = listItem,
-                    date = listItem,
-                    author = listItem,
-                    imageUrl = "",
+                    title = listItem.title,
+                    date = listItem.publishedAt.toDateString(),
+                    author = listItem.author ?: "",
+                    imageUrl = listItem.urlToImage ?: "",
                     onItemClick = { onItemClick() }
                 )
                 Divider(

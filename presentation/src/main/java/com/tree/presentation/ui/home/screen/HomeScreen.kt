@@ -19,10 +19,12 @@ import com.tree.design_system.component.text.AceLogoTitleText
 import com.tree.design_system.theme.AceTheme
 import com.tree.presentation.ui.home.component.HomeTitleText
 import com.tree.presentation.ui.home.component.HomeList
+import com.tree.presentation.viewmodel.NewsViewModel
 
 @Composable
 fun HomeScreen(
-    onNewsClick: () -> Unit
+    onNewsClick: () -> Unit,
+    newsViewModel: NewsViewModel
 ) {
     val scrollState = rememberScrollState()
 
@@ -51,7 +53,8 @@ fun HomeScreen(
                         Spacer(modifier = Modifier.height(16.dp))
                         Box(modifier = Modifier.height(264.dp)) {
                             HomeList(
-                                list = listOf("첫번째", "두번째", "세번째", "네번째"),
+                                isNews = true,
+                                newsViewModel = newsViewModel,
                                 onItemClick = {}
                             )
                         }
@@ -73,7 +76,8 @@ fun HomeScreen(
                         Spacer(modifier = Modifier.height(16.dp))
                         Box(modifier = Modifier.height(264.dp)) {
                             HomeList(
-                                list = listOf("첫번째", "두번째", "세번째", "네번째"),
+                                isNews = false,
+                                newsViewModel = newsViewModel,
                                 onItemClick = {}
                             )
                         }

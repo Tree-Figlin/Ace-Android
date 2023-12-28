@@ -8,9 +8,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tree.design_system.component.text.AceTitleText
 import com.tree.presentation.ui.news.component.NewsList
+import com.tree.presentation.viewmodel.NewsViewModel
 
 @Composable
-fun NewsScreen() {
+fun NewsScreen(
+    viewModel: NewsViewModel
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -19,7 +22,7 @@ fun NewsScreen() {
         AceTitleText(text = "뉴스")
         Column(modifier = Modifier.padding(horizontal = 16.dp)) {
             NewsList(
-                list = listOf("첫번째", "두번째", "세번째", "네번째"),
+                viewModel = viewModel,
                 onItemClick = {}
             )
         }
