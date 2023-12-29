@@ -1,6 +1,6 @@
 # Ace(Affordable and Clean Energy)
 <p align="center">
-![Frame 126](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/349cb2ed-d6a5-4d21-971c-6cde58d68c6f)
+ <img src = [https://github.com/Tree-Figlin/Ace-Android/assets/108396442/349cb2ed-d6a5-4d21-971c-6cde58d68c6f] />
  />
 </p> 
 
