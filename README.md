@@ -1,7 +1,6 @@
 # Ace(Affordable and Clean Energy)
 <p align="center">
- <img src = [https://github.com/Tree-Figlin/Ace-Android/assets/108396442/349cb2ed-d6a5-4d21-971c-6cde58d68c6f] />
- />
+ ![Frame 126](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/c302a4b6-f37f-42bc-9ed6-5db59003e4db)<br>
 </p> 
 
 ## 🤔 ACE?
@@ -18,8 +17,9 @@
 
 ## 📱 Screen<br>
 <p>
-<img src = [https://github.com/Tree-Figlin/Ace-Android/assets/108396442/f6710e30-0e41-4981-a7bd-fd59efcec1b7] />
-<img src = [https://github.com/Tree-Figlin/Ace-Android/assets/108396442/44b519da-bfd2-4009-b7ca-893e82d5a86b] />
+![Intro](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/d3584c07-93f5-46f3-8dfa-19cb2c0656f3)<br>
+![Intro 2](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/4be7802b-b1c7-4ceb-a245-404830613afc)<br>
+
 </p>
 <br>
 ## 🗂️ Packages <br>
@@ -66,6 +66,7 @@ ACE Android<br>
  
 ```
 <br>
+
 ## :rocket: Tech Skills
 - Language: Kotlin
 - Ui: Jetpack Compose
@@ -79,3 +80,10 @@ ACE Android<br>
 - AAC(Android Architecture Components)
 - Sever: firebase
 - Map: google Maps SDK for Android
+
+## :sparkles: 프로젝트 빌드 방법
+local.propreties 안에<br>
+GOOGLE_API_KEY="AIzaSyAngCNmkeiECy-8B8bC4QdahM0YGfwWv9g"<br>
+NEWS_API_KEY="b9e2157143ec4af7932ca7381645645d"<br>
+BASE_URL="https://newsapi.org/v2/"<br>
+추가후 di모듈로 앱 빌드
