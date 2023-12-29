@@ -23,7 +23,7 @@
 </p>
 <br>
 ## 🗂️ Packages <br>
-```
+
 ACE Android<br>
  ┣ 📂buildSrc <br>
  ┣ 📂data<br>
@@ -64,7 +64,6 @@ ACE Android<br>
  ┃ ┗ 📂viewmodel<br>
  ┃ ┃ ┗ 📂util<br>
  
-```
 <br>
 
 ## :rocket: Tech Skills
