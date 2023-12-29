@@ -32,7 +32,7 @@ fun MapPreview(
     navController: NavController,
     viewModel: MapViewModel,
     onBack: () -> Unit,
-    onGetResult: () -> Unit
+    mapLocation: String
 ) {
     val locationState = viewModel.ecoFriendlyLocation.collectAsState()
 
@@ -54,9 +54,18 @@ fun MapPreview(
             }
         }
         LaunchedEffect(viewModel.resultLatLng.value) {
-            Log.d("testt","launched")
             if(viewModel.resultLatLng.value.latitude != 0.0 && viewModel.resultLatLng.value.longitude != 0.0) {
                 currentLocation = LatLng(viewModel.resultLatLng.value.latitude, viewModel.resultLatLng.value.longitude)
+                cameraState.centerOnLocation(currentLocation)
+            }
+        }
+        LaunchedEffect(mapLocation) {
+            Log.d("testt","launched")
+            when(mapLocation) {
+                "전라" -> viewModel.changeUserLocation(35.143066, 126.800463)
+            }
+            if(viewModel.latitude != 0.0 && viewModel.longitude != 0.0) {
+                currentLocation = LatLng(viewModel.latitude, viewModel.longitude)
                 cameraState.centerOnLocation(currentLocation)
             }
         }
