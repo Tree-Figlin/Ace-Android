@@ -16,16 +16,15 @@
 <span>3. 환경관 관련한 여러 행사들을 손쉽게 찾고 참여해 보아요! </span><br>
 
 
-## 📱 Screen
+## 📱 Screen<br>
 <p>
-![Intro](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/f6710e30-0e41-4981-a7bd-fd59efcec1b7)
-![Intro 2](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/44b519da-bfd2-4009-b7ca-893e82d5a86b)
-
+<img src = [https://github.com/Tree-Figlin/Ace-Android/assets/108396442/f6710e30-0e41-4981-a7bd-fd59efcec1b7] />
+<img src = [https://github.com/Tree-Figlin/Ace-Android/assets/108396442/44b519da-bfd2-4009-b7ca-893e82d5a86b] />
 </p>
 <br>
 ## 🗂️ Packages <br>
 ```
-ACE Android
+ACE Android<br>
  ┣ 📂buildSrc <br>
  ┣ 📂data<br>
  ┃ ┣ 📂datasource<br>
