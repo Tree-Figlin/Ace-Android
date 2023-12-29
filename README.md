@@ -1,6 +1,6 @@
 # Ace(Affordable and Clean Energy)
 <p align="center">
- <img src = ![image](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/dc78e614-9cce-4772-9deb-78b6a45a8628)
+![Frame 126](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/349cb2ed-d6a5-4d21-971c-6cde58d68c6f)
  />
 </p> 
 
@@ -18,13 +18,12 @@
 
 ## 📱 Screen
 <p>
-<img src = https://github.com/team-goms/GOMS-Android/assets/84944098/d3b3cd2f-1233-4abe-9f79-3af32ab36f97.png width=190 /> &nbsp; &nbsp;
-<img src = https://github.com/team-goms/GOMS-Android/assets/84944098/d5b743b8-1ed7-4aea-9584-acd4a1cb7a42.png width=190 /> &nbsp; &nbsp;
-<img src = https://github.com/team-goms/GOMS-Android/assets/84944098/e7e214bb-e9ba-4ddd-8a65-239f60475c4c.png width=190 /> &nbsp; &nbsp;
-<img src = https://cdn.discordapp.com/attachments/1084762340123217980/1116228881880469564/6.5.png width=190 />
+![Intro](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/f6710e30-0e41-4981-a7bd-fd59efcec1b7)
+![Intro 2](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/44b519da-bfd2-4009-b7ca-893e82d5a86b)
+
 </p>
-┃ ┣ ┗ 📂
-## 🗂️ Packages
+<br>
+## 🗂️ Packages <br>
 ```
 ACE Android
  ┣ 📂buildSrc <br>
@@ -67,7 +66,7 @@ ACE Android
  ┃ ┃ ┗ 📂util<br>
  
 ```
-
+<br>
 ## :rocket: Tech Skills
 - Language: Kotlin
 - Ui: Jetpack Compose
