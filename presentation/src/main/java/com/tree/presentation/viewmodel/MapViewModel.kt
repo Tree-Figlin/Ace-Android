@@ -69,6 +69,11 @@ class MapViewModel @Inject constructor(
         }
     }
 
+    fun changeUserLocation(latitude: Double, longitude: Double) {
+        _latitude = latitude
+        _longitude = longitude
+    }
+
     fun getResult() {
         val query: Query = getMessageQuery()
         val valueEventListener = object : ValueEventListener {

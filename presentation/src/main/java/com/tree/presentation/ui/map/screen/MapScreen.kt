@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -17,6 +18,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.tree.design_system.theme.AceTheme
+import com.tree.presentation.ui.map.component.MapFilterList
 import com.tree.presentation.ui.map.component.MapPreview
 import com.tree.presentation.ui.map.component.MapTopBar
 import com.tree.presentation.ui.map.component.bottomsheet.MapBottomSheet
@@ -34,7 +36,8 @@ fun MapScreen(
         contract = ActivityResultContracts.RequestMultiplePermissions()
     ) { isGrantedMap: Map<String, Boolean> -> }
 
-    var isGetResult by remember { mutableStateOf(false) }
+    var isFilter by remember { mutableStateOf(false) }
+    var location by remember { mutableStateOf("") }
 
     LaunchedEffect("Permission") {
         permissionLauncher.launch(
@@ -56,7 +59,7 @@ fun MapScreen(
                 navController = navController,
                 viewModel = viewModel,
                 onBack = { onBack() },
-                onGetResult = { isGetResult = true}
+                mapLocation = location,
             )
             MapBottomSheet(
                 ecoFriendlyLocationState = ecoFriendlyLocationState,
@@ -65,8 +68,25 @@ fun MapScreen(
                     Log.d("testt",it.toString())
                     Log.d("testt",viewModel.resultLatLng.toString())
                 },
-                onFilterClick = {}
+                onFilterClick = { isFilter = true }
             )
+
+        }
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Bottom
+        ) {
+            if(isFilter) {
+                MapFilterList(
+                    onBackClick = {
+                        isFilter = false
+                    },
+                    onCheckClick = {
+                        location = "전라"
+                        isFilter = false
+                    }
+                )
+            }
         }
     }
 }
