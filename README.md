@@ -1,6 +1,7 @@
 # Ace(Affordable and Clean Energy)
 <p align="center">
- <img src = https://github.com/team-goms/GOMS-Android/assets/84944098/571e4307-0713-4351-83ce-7e055428db46.png width=25% />
+ <img src = ![image](https://github.com/Tree-Figlin/Ace-Android/assets/108396442/dc78e614-9cce-4772-9deb-78b6a45a8628)
+ />
 </p> 
 
 ## 🤔 ACE?
