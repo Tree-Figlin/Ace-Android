@@ -27,44 +27,44 @@
 ## 🗂️ Packages
 ```
 ACE Android
- ┣ 📂buildSrc
- ┣ 📂data
- ┃ ┣ 📂datasource
- ┃ ┣ 📂remote
- ┃ ┃ ┣ 📂api
- ┃ ┃ ┣ 📂datasource
- ┃ ┃ ┗ 📂dto
- ┃ ┣ 📂repository
- ┃ ┗ 📂util
- ┣ 📂design-system
- ┃ ┣ 📂componet
- ┃ ┃ ┣ 📂bottombar
- ┃ ┃ ┣ 📂bottom
- ┃ ┃ ┣ 📂text
- ┃ ┃ ┣ 📂textfield
- ┃ ┃ ┗ 📂lottie
- ┃ ┣ 📂icon
- ┃ ┣ 📂theme
- ┃ ┃ ┗ 📂color
- ┃ ┗ 📂util
- ┣ 📂di
- ┃ ┗ 📂module
- ┣ 📂domain
- ┃ ┣ 📂exception
- ┃ ┣ 📂model
- ┃ ┣ 📂repository
- ┃ ┗ 📂usecase
- ┣ 📂presentation
- ┃ ┣ 📂ui
- ┃ ┃ ┣ 📂base
- ┃ ┃ ┣ 📂event
- ┃ ┃ ┣ 📂home
- ┃ ┃ ┣ 📂intro
- ┃ ┃ ┣ 📂map
- ┃ ┃ ┣ 📂news
- ┃ ┃ ┗ 📂util
- ┃ ┗ 📂viewmodel
- ┃ ┃ ┗ 📂util
+ ┣ 📂buildSrc <br>
+ ┣ 📂data<br>
+ ┃ ┣ 📂datasource<br>
+ ┃ ┣ 📂remote<br>
+ ┃ ┃ ┣ 📂api<br>
+ ┃ ┃ ┣ 📂datasource<br>
+ ┃ ┃ ┗ 📂dto<br>
+ ┃ ┣ 📂repository<br>
+ ┃ ┗ 📂util<br>
+ ┣ 📂design-system<br>
+ ┃ ┣ 📂componet<br>
+ ┃ ┃ ┣ 📂bottombar<br>
+ ┃ ┃ ┣ 📂bottom<br>
+ ┃ ┃ ┣ 📂text<br>
+ ┃ ┃ ┣ 📂textfield<br>
+ ┃ ┃ ┗ 📂lottie<br>
+ ┃ ┣ 📂icon<br>
+ ┃ ┣ 📂theme<br>
+ ┃ ┃ ┗ 📂color<br>
+ ┃ ┗ 📂util<br>
+ ┣ 📂di<br>
+ ┃ ┗ 📂module<br>
+ ┣ 📂domain<br>
+ ┃ ┣ 📂exception<br>
+ ┃ ┣ 📂model<br>
+ ┃ ┣ 📂repository<br>
+ ┃ ┗ 📂usecase<br>
+ ┣ 📂presentation<br>
+ ┃ ┣ 📂ui<br>
+ ┃ ┃ ┣ 📂base<br>
+ ┃ ┃ ┣ 📂event<br>
+ ┃ ┃ ┣ 📂home<br>
+ ┃ ┃ ┣ 📂intro<br>
+ ┃ ┃ ┣ 📂map<br>
+ ┃ ┃ ┣ 📂news<br>
+ ┃ ┃ ┗ 📂util<br>
+ ┃ ┗ 📂viewmodel<br>
+ ┃ ┃ ┗ 📂util<br>
  
 ```
 
